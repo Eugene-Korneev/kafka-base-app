@@ -24,6 +24,6 @@ CREATE EXTERNAL TABLE IF NOT EXISTS weather (
     );
 
 INSERT INTO TABLE weather
-    SELECT lng, lat, avg_tmpr_f, avg_tmpr_c, wthr_date,
-        NULL AS `__key`, NULL AS `__partition`, -1 AS `__offset`, (CURRENT_TIMESTAMP) AS `__timestamp`
+    SELECT `lng`, `lat`, `avg_tmpr_f`, `avg_tmpr_c`, `wthr_date`,
+        NULL AS `__key`, NULL AS `__partition`, -1 AS `__offset`, NULL AS `__timestamp`
     FROM weather_parquet;
